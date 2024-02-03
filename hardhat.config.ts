@@ -33,33 +33,33 @@ const config: HardhatUserConfig = {
           (process.env.SOLIDITY_OPTIMIZER_RUNS &&
             Boolean(parseInt(process.env.SOLIDITY_OPTIMIZER_RUNS)) &&
             parseInt(process.env.SOLIDITY_OPTIMIZER_RUNS)) ||
-          200,
+          200
       },
       outputSelection: {
         '*': {
-          '*': ['storageLayout'],
-        },
-      },
-    },
+          '*': ['storageLayout']
+        }
+      }
+    }
   },
   storageVault: {
     check: {
-      storeFile: 'storage-store-lock.json',
+      storeFile: 'storage-store-lock.json'
     },
     lock: {
       storeFile: 'storage-store-lock.json',
-      prettify: true,
-    },
+      prettify: true
+    }
   },
   finder: {
-    prettify: true,
+    prettify: true
   },
   docgen: {
-    outputDir: './docs',
+    outputDir: './docs'
   },
   contractSizer: {
     runOnCompile: false,
-    strict: true,
+    strict: true
   },
   gasReporter: {
     enabled:
@@ -71,14 +71,14 @@ const config: HardhatUserConfig = {
       process.env.GAS_PRICE_API ||
       'https://api.etherscan.io/api?module=proxy&action=eth_gasPrice',
     token: 'ETH',
-    currency: 'USD',
+    currency: 'USD'
   },
   networks: {
     hardhat: {
       allowUnlimitedContractSize:
         (process.env.ALLOW_UNLIMITED_CONTRACT_SIZE &&
           'true' === process.env.ALLOW_UNLIMITED_CONTRACT_SIZE.toLowerCase()) ||
-        false,
+        false
     },
     custom: {
       url: process.env.CUSTOM_NETWORK_URL || '',
@@ -89,17 +89,17 @@ const config: HardhatUserConfig = {
             parseInt(process.env.CUSTOM_NETWORK_ACCOUNTS_COUNT)) ||
           0,
         mnemonic: process.env.CUSTOM_NETWORK_ACCOUNTS_MNEMONIC || '',
-        path: process.env.CUSTOM_NETWORK_ACCOUNTS_PATH || '',
-      },
+        path: process.env.CUSTOM_NETWORK_ACCOUNTS_PATH || ''
+      }
     },
     baseTestnet: {
       url: process.env.BASE_TESTNET_RPC_URL || '',
-      accounts: getWallet(),
-    },
+      accounts: getWallet()
+    }
   },
   etherscan: {
     apiKey: {
-      baseTestnet: process.env.BASE_SEPOLIA_SCAN || '',
+      baseTestnet: process.env.BASE_SEPOLIA_SCAN || ''
     },
     customChains: [
       {
@@ -111,11 +111,11 @@ const config: HardhatUserConfig = {
           0,
         urls: {
           apiURL: process.env.CUSTOM_NETWORK_API_URL || '',
-          browserURL: process.env.CUSTOM_NETWORK_BROWSER_URL || '',
-        },
-      },
-    ],
-  },
+          browserURL: process.env.CUSTOM_NETWORK_BROWSER_URL || ''
+        }
+      }
+    ]
+  }
 };
 
 export default config;
