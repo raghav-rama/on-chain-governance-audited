@@ -54,10 +54,10 @@ jobs:
         run: pnpm install --production=false
 
       - name: Hardhat compile
-        run: pnpm run hardhat compile --force
+        run: pnpm hardhat compile --force
 
       - name: Tests
-        run: pnpm run hardhat test --no-compile
+        run: pnpm hardhat test --no-compile
 
       - name: Linters & Formatters
         run: pnpm run hook:pre-push
