@@ -21,8 +21,8 @@ module.exports = {
         arrowParens: 'avoid',
         printWidth: 120,
         useTabs: false,
-        compiler: '^0.8.18'
-      }
-    }
-  ]
+        compiler: '^0.8.20',
+      },
+    },
+  ],
 };
