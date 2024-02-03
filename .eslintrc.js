@@ -3,7 +3,7 @@ module.exports = {
     browser: false,
     es2021: true,
     mocha: true,
-    node: true
+    node: true,
   },
 
   root: true,
@@ -17,13 +17,13 @@ module.exports = {
     'plugin:promise/recommended',
     'plugin:import/recommended',
     'plugin:import/typescript',
-    'prettier'
+    'prettier',
   ],
 
   parser: '@typescript-eslint/parser',
 
   parserOptions: {
-    ecmaVersion: 12
+    ecmaVersion: 12,
   },
 
   rules: {
@@ -35,16 +35,16 @@ module.exports = {
       {
         alphabetize: {
           order: 'asc',
-          caseInsensitive: true
-        }
-      }
+          caseInsensitive: true,
+        },
+      },
     ],
     'sort-vars': ['warn', { ignoreCase: true }],
     'node/no-unsupported-features/es-syntax': [
       'error',
-      { ignores: ['modules'] }
-    ]
+      { ignores: ['modules'] },
+    ],
   },
 
-  ignorePatterns: ['dist', '**/*.d.ts']
+  ignorePatterns: ['dist', '**/*.d.ts'],
 };
