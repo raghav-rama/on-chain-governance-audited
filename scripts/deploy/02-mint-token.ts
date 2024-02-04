@@ -14,13 +14,32 @@ async function main() {
     governanceToken,
     GovernanceTokenContractAddress
   );
-  await governanceTokenContract.mint(second.address, 1000);
-  const balance = await governanceTokenContract.balanceOf(second.address);
-  console.log('Second address balance:', balance.toString());
+  await governanceTokenContract.mint(signer.address, 1000);
+  const balance = await governanceTokenContract.balanceOf(signer.address);
+  console.log('Signer address balance:', balance.toString());
+
+  // delegate voting power
+  const tx = await governanceTokenContract
+    .connect(signer)
+    .delegate(signer.address);
+  tx.wait(1);
+
+  const votes = await governanceTokenContract.getVotes(signer.address);
+  console.log('Votes:', votes.toString());
   console.log(
     `Balance of ${signer.address} is ${await ethers.provider.getBalance(signer.address)}`
   );
 }
+
+/*
+ethers.provider.getLogs({
+    fromBlock: 0,
+    toBlock: 'latest',
+    address: governorContract.address,
+    topics: [governorContract.interface.getEventTopic('ProposalCreated')],
+  });
+
+*/
 
 main()
   .then(() => {
