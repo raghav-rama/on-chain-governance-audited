@@ -31,16 +31,6 @@ async function main() {
   );
 }
 
-/*
-ethers.provider.getLogs({
-    fromBlock: 0,
-    toBlock: 'latest',
-    address: governorContract.address,
-    topics: [governorContract.interface.getEventTopic('ProposalCreated')],
-  });
-
-*/
-
 main()
   .then(() => {
     return 0;
