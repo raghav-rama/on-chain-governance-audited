@@ -15,7 +15,6 @@ async function main(proposalIndex: number) {
   if (!proposalId) {
     throw new Error('Proposal not found');
   }
-  console.log('Proposal Id:', proposalId.toString());
   const governorContract = await ethers.getContractAt(
     MyGovernor,
     MyGovernorContractAddress
