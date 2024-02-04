@@ -18,10 +18,14 @@ contract MyGovernor is
 {
     constructor(
         IVotes _token,
-        TimelockController _timelock
+        TimelockController _timelock,
+        uint32 _votingPeriod,
+        uint32 _votingDelay,
+        uint256 _proposalThreshold,
+        uint256 _quorumPercentage
     )
         Governor("MyGovernor")
-        GovernorSettings(7200 /* 1 day */, 50400 /* 1 week */, 0)
+        GovernorSettings(_votingPeriod, _votingDelay, _proposalThreshold)
         GovernorVotes(_token)
         GovernorVotesQuorumFraction(4)
         GovernorTimelockControl(_timelock)
