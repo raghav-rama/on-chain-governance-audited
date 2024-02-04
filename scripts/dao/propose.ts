@@ -6,6 +6,9 @@ import {
   SimpleStorageContractAddress,
   VOTING_DELAY,
   devChains,
+  FunctionName,
+  FunctionArgs,
+  Description,
 } from '../../utils/constants';
 import { moveBlocks } from '../../utils/move_blocks';
 
@@ -19,8 +22,8 @@ async function propose() {
     SimpleStorageContractAddress
   );
   const encodedFunctioncCall = simpleStorage.interface.encodeFunctionData(
-    'store',
-    [42n]
+    FunctionName,
+    [FunctionArgs]
   );
   console.log('Proposing to set x to 42');
 
@@ -28,7 +31,7 @@ async function propose() {
     [SimpleStorageContractAddress],
     [0],
     [encodedFunctioncCall],
-    'Set x to 42'
+    Description
   );
   await proposeTx.wait(1);
 

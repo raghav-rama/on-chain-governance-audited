@@ -1,12 +1,17 @@
 import { ethers } from 'hardhat';
-import { TimeLock } from '../../utils/constants';
+import { TimeLock, MIN_DELAY } from '../../utils/constants';
 
 async function main() {
   const [signer, second] = await ethers.getSigners();
   console.log('Signers: ', signer.address, second.address);
 
   const timeLockFactory = await ethers.getContractFactory(TimeLock);
-  const timeLockContract = await timeLockFactory.deploy(1000, [], [], signer);
+  const timeLockContract = await timeLockFactory.deploy(
+    MIN_DELAY,
+    [],
+    [],
+    signer
+  );
   await timeLockContract.waitForDeployment();
   const timeLockAddress = await timeLockContract.getAddress();
   console.log('Timelock deployed to:', timeLockAddress);
