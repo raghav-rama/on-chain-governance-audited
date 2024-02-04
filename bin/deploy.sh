@@ -12,4 +12,4 @@ if [ ! "$2" ]; then
   exit 0
 fi
 
-yarn run hardhat run --network "$1" scripts/deploy/"$2".ts
+pnpm hardhat run --network "$1" scripts/deploy/"$2".ts

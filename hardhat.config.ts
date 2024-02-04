@@ -28,12 +28,12 @@ const config: HardhatUserConfig = {
         enabled:
           (process.env.SOLIDITY_OPTIMIZER &&
             'true' === process.env.SOLIDITY_OPTIMIZER.toLowerCase()) ||
-          false,
+          true,
         runs:
           (process.env.SOLIDITY_OPTIMIZER_RUNS &&
             Boolean(parseInt(process.env.SOLIDITY_OPTIMIZER_RUNS)) &&
             parseInt(process.env.SOLIDITY_OPTIMIZER_RUNS)) ||
-          200,
+          20,
       },
       outputSelection: {
         '*': {
