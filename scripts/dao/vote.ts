@@ -22,7 +22,7 @@ async function main(proposalIndex: number) {
   );
   const voteTxRes = await governorContract.castVoteWithReason(
     proposalId,
-    1,
+    1n,
     'I like this proposal'
   );
   voteTxRes.wait(1);

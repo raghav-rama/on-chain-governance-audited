@@ -20,7 +20,7 @@ async function propose() {
   );
   const encodedFunctioncCall = simpleStorage.interface.encodeFunctionData(
     'store',
-    [42]
+    [42n]
   );
   console.log('Proposing to set x to 42');
 
@@ -30,12 +30,10 @@ async function propose() {
     [encodedFunctioncCall],
     'Set x to 42'
   );
-  const proposalResponse = await proposeTx.wait(1);
+  await proposeTx.wait(1);
 
-  console.log('proposalResponse');
-  console.log(proposalResponse);
   if (devChains.includes(network.name)) {
-    moveBlocks(VOTING_DELAY + 1);
+    await moveBlocks(VOTING_DELAY + 1);
   }
 }
 

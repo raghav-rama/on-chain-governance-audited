@@ -32,10 +32,8 @@ async function main() {
 }
 
 main()
-  .then(() => {
-    return 0;
-  })
+  .then(() => process.exit(0))
   .catch((error) => {
     console.error(error);
-    return 1;
+    process.exit(1);
   });

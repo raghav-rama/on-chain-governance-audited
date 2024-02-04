@@ -17,8 +17,8 @@ async function main() {
   const myGovernorContract = await myGovernorFactory.deploy(
     GovernanceTokenContractAddress,
     TimeLockContractAddress,
-    VOTING_PERIOD,
     VOTING_DELAY,
+    VOTING_PERIOD,
     PROPOSAL_THRESHOLD,
     QUORUM_PERCENTAGE
   );

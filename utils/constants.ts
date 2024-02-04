@@ -4,7 +4,7 @@ export const GovernanceTokenContractAddress =
 export const TimeLockContractAddress =
   '0xCf7Ed3AccA5a467e9e704C703E8D87F634fB0Fc9';
 export const MyGovernorContractAddress =
-  '0xDc64a140Aa3E981100a9becA4E685f962f0cF6C9';
+  '0xdc64a140aa3e981100a9beca4e685f962f0cf6c9';
 export const SimpleStorageContractAddress =
   '0x5FC8d32690cc91D4c39d9d3abcBD16989F875707';
 export const GovernanceToken = 'GovernanceToken';
