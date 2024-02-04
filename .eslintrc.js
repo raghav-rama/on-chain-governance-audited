@@ -27,6 +27,7 @@ module.exports = {
   },
 
   rules: {
+    'no-unused-vars': 'warn',
     'no-process-exit': 'off',
     'node/no-missing-import': 'off',
     'node/no-unpublished-import': 'off',
