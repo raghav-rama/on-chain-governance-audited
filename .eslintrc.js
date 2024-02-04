@@ -27,6 +27,7 @@ module.exports = {
   },
 
   rules: {
+    'no-process-exit': 'off',
     'node/no-missing-import': 'off',
     'node/no-unpublished-import': 'off',
     'prettier/prettier': 'warn',
