@@ -15,6 +15,7 @@
     "storage:lock": "hardhat storage-lock",
     "storage:check": "hardhat storage-check",
     "size": "hardhat size-contracts",
+    "script": "./bin/script.sh",
     "deploy": "./bin/deploy.sh",
     "deploy:all": "hardhat run scripts/deploy.ts --network",
     "deploy-verify:all": "hardhat run scripts/deployAndVerify.ts --network",
